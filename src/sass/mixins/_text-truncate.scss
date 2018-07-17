@@ -1,0 +1,18 @@
+
+// Text truncate
+// Requires inline-block or block for proper styling
+/* ==========================================================================
+   Adding Truncation to an element isn't as simple as it should be, although it is with this handy time saver, meaning when you include the mixin, you only have to specify your boundry with a max width value, happy days!
+   ========================================================================== */
+@mixin text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

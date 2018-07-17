@@ -1,0 +1,14 @@
+
+// ###Hardware acceleration
+/* ==========================================================================
+   Simple and effective for when you need to trigger hardware acceleration for some animation, keeping everything fast, slick and flicker-free.
+   ========================================================================== */
+@mixin hardware($backface: true, $perspective: 1000) {
+    @if $backface {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    perspective: $perspective;
+}

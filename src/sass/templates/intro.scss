@@ -1,0 +1,15 @@
+.section__intro {
+    // padding-top: 50px - 16;
+    // padding-bottom: 50px - 11;
+    // @include media-breakpoint-up(sm) {
+    //     padding-top: 100px - 16;
+    //     padding-bottom: 100px - 11;
+    // }
+    @include fp(padding-top, 50 - 16, 100 - 16);
+    @include fp(padding-bottom, 50 - 11, 100 - 11);
+    .intro {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

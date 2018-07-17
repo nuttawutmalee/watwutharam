@@ -1,0 +1,13 @@
+{
+	"watwutharam": {
+		"site_domain": "http://watwutharam.dev",
+		"api_domain": "http://watwutharam.dev",
+		"form_token": "YofihgsHXIObx9Nvz0smAA1plgYcozN1mMUwqjOe",
+		"alt_app_name": "watwutharam",
+		"brand_name": "Watwutharam",
+		"brand_logo": "assets/img/quoCMS.png",
+		"brand_bg_image": "assets/img/cms-login-bg.jpg",
+		"map_api_key": "AIzaSyAFKjfbiekIaBMKRwgMoFtwnNqsYXQW_Q0",
+		"richtext_custom_template": []
+	}
+}

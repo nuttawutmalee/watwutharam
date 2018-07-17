@@ -1,0 +1,35 @@
+
+// $ipad-pro-portrait-breakpoint: "(min-device-width : 1024px) and (max-device-width : 1024px) and (min-device-height : 1366px) and (max-device-height : 1366px) and (min-width: 1024px) and (max-width: 1024px)";
+// $ipad-pro-landscape-breakpoint: "(min-device-width : 1024px) and (max-device-width : 1024px) and (min-device-height : 1366px) and (max-device-height : 1366px) and (min-width: 1366px) and (max-width: 1366px)";
+$ipad-pro-portrait-breakpoint: "(min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait)";
+$ipad-pro-landscape-breakpoint: "(min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: landscape)";
+
+// Responsive Mixins
+// use
+// @include respond(ipad-pro-portrait) {
+// }
+@mixin respond($media) {
+  @if $media == desktop {
+    @media only screen and (min-width: $medium-tablet-device-width + 1) and #{$desktop-only-breakpoint} { @content; }
+  }
+  @else if $media == ipad-pro-portrait {
+    @media only screen and #{$ipad-pro-portrait-breakpoint} { @content; }
+  }
+  @else if $media == ipad-pro-landscape {
+    @media only screen and #{$ipad-pro-landscape-breakpoint} { @content; }
+  }
+  // etc
+}
+
+
+// ###Retina
+
+@mixin retina {
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-moz-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3 / 2),
+	only screen and (min-device-pixel-ratio: 1.5),
+	only screen and (min-resolution: 1.5dppx) {
+		@content;
+	}
+}

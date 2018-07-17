@@ -1,0 +1,15 @@
+.mejs__controls {
+    display: none !important;
+}
+
+.mejs__button>button {
+    background: transparent url($image-path+'mediaelement/mejs-controls.svg');
+}
+
+.mejs__overlay-button {
+    background: url($image-path+'mediaelement/mejs-controls.svg') no-repeat;
+}
+
+.mejs__overlay-loading-bg-img {
+    background: transparent url($image-path+'mediaelement/mejs-controls.svg') -160px -40px no-repeat;
+}

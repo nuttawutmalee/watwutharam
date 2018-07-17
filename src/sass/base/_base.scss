@@ -1,0 +1,77 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
+}
+
+html {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	&:not(.ie) {
+		*,
+		::before,
+		::after {
+			backface-visibility: hidden;
+		} // FIXED WINDOW TOP
+		body {
+			&.is--first--loading {
+				position: fixed;
+				overflow: hidden;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+		}
+	} // FOR SMOOTH SCROLLBAR VERSION
+	&.no-touchevents {
+		&:not(.ie) {
+			overflow: hidden;
+			height: 100%;
+			body {
+				overflow: hidden;
+				height: 100%;
+			}
+			.global__container,
+			.page__container {
+				height: 100%;
+			}
+		}
+	} // FORCE IOS
+	&.touchevents {
+		&.is--ios {
+			[data-scrollbar] {
+				display: initial;
+			}
+		}
+	}
+}
+
+body {
+	background-color: $body-bg;
+}
+
+body {
+	color: $body-color;
+	font-family: $font-family-base;
+	font-weight: $font-weight-normal;
+	@include antialias;
+	&.overflow--hidden {
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+	}
+}
+
+@include selection {
+	color: $white;
+	background-color: $brand-inverse;
+}

@@ -1,0 +1,22 @@
+
+// ###Responsive ratio
+/* ==========================================================================
+   We use this for creating scalable elements (usually images / background images) that maintain a ratio.
+   So to use this you could write the below and your div would have a ratio commonly utilised by video.
+
+   div {
+       @include responsive-ratio(16,9);
+   }
+   ========================================================================== */
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+  $padding: unquote( ( $y / $x ) * 100 + '%' );
+  @if $pseudo {
+    &:before {
+      @include pseudo($pos: relative);
+      width: 100%;
+      padding-top: $padding;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}

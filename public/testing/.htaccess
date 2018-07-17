@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    Authtype Basic
+    AuthName "CMS TESTING AUTH"
+    #Local
+    #AuthUserFile C:\xampp\htdocs\cms-api\public\testing\.htpasswd
+
+    #Production
+    #AuthUserFile /home/quiqcms/public_html/public/testing/.htpasswd
+
+    Require valid-user
+</IfModule>

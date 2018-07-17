@@ -1,0 +1,1 @@
+{!! isset($preview) ? $preview : null !!}

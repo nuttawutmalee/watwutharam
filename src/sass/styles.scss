@@ -1,0 +1,37 @@
+// Abstracts
+@import 'includes';
+// Above the fold content
+// Vendors
+@import '../vendors/normalize/normalize';
+@import '../vendors/smooth-scrollbar/smooth-scrollbar';
+@import '../vendors/jquery-selectric/selectric';
+@import '../vendors/slick/slick';
+@import '../vendors/slick-lightbox/slick-lightbox';
+// Base
+@import 'base/reset';
+// @import 'base/base';
+@import 'base/typography';
+@import 'base/helpers';
+// Layout
+@import 'layout/page';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/footer';
+// Components
+@import 'components/image';
+@import 'components/button';
+@import 'components/pagination';
+// Templates
+@import 'templates/hero';
+@import 'templates/intro';
+@import 'templates/news';
+@import 'templates/articles';
+@import 'templates/banner';
+@import 'templates/about';
+@import 'templates/text';
+@import 'templates/gallery';
+@import 'templates/contact';
+// Pages
+@import 'pages/home';
+// Theme
+@import 'themes/default';

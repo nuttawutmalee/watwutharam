@@ -1,0 +1,141 @@
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: ( xxs: 0, xs: 375px, sm: 576px, md: 768px, lg: 1024px, xl: 1200px, xxl: 1380px, xxxl: 1680px) !default;
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+// Start with assigning color names to specific hex values.
+$white: #ffffff !default;
+$black: #000000 !default;
+// Create grayscale
+$gray-darker: #242424 !default;
+$gray-dark: #303030 !default;
+$gray: #6d6d6d !default;
+$gray-light: #73767f !default;
+$gray-lighter: #e7e5e0 !default;
+// Reassign color vars to semantic color scheme
+$brand: #f5d3a3 !default;
+$brand-inverse: #a46838 !default;
+$cream: #fdf2dd !default;
+// FOOTER
+$footer-color: $white !default;
+$footer-bg-color: $brand !default;
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg: #f9f7f4 !default;
+$body-bg2: #fdf1d8 !default;
+$body-bg3: #f2eee7 !default;
+$body-color: #483931 !default;
+$inverse-bg: $gray-dark !default;
+$inverse-color: $gray-dark !default;
+// Links
+//
+// Style anchor elements.
+$link-color: $brand !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: none !default;
+// FONT FAMILY
+$font-semibold: 'montserratsemibold',
+sans-serif;
+$font-light: 'promptlight',
+sans-serif;
+$font-medium: 'promptmedium',
+sans-serif;
+$font-regular: 'promptregular',
+sans-serif;
+$font-body: Tahoma,
+Geneva,
+sans-serif;
+$font-heading: $font-regular;
+$font-base: 16 !default;
+$font-base-mobile: 11 !default;
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+// BASE
+$color-base: currentColor !default;
+$font-family-base: $font-body !default;
+$font-size-base: 16px !default;
+$font-weight-base: normal !default;
+$line-height-base: em(22, 16) !default;
+$letter-spacing-base: normal !default;
+$text-transform-base: none !default;
+// HEADLINE
+$headings-color: currentColor !default;
+$headings-font-family: $font-heading !default;
+$headings-font-weight: normal !default;
+$headings-line-height: em(36, 30) !default;
+$headings-letter-spacing: normal !default;
+$headings-text-transform: none !default;
+$headings-bold-font-family: $font-medium !default;
+$font-size-h1: em(48, $font-base) !default;
+$font-size-h2: em(36, $font-base) !default;
+$font-size-h3: em(30, $font-base) !default;
+$font-size-h4: em(22, $font-base) !default;
+$font-size-h5: 20px !default;
+$font-size-h6: 17px !default;
+// DISPLAY
+$display-font-family: $font-medium !default;
+$display-font-weight: normal !default;
+$display-line-height: 1em !default;
+$display-letter-spacing: normal !default;
+$display-text-transform: uppercase !default;
+$display1-size: em(180, $font-base) !default;
+$display2-size: em(84, $font-base) !default;
+$display3-size: em(64, $font-base) !default;
+$display4-size: em(44, $font-base) !default;
+$lead-font-size: em(18, $font-base) !default;
+$lead-font-weight: normal !default;
+$small-font-size: 80% !default;
+$small-font-weight: normal !default;
+$text-muted: $gray !default;
+// Components
+//
+// Define common padding and border radius sizes and more.
+$border-radius: .25rem !default;
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+$zindex-dropdown-backdrop: 990 !default;
+$zindex-navbar: 1000 !default;
+$zindex-dropdown: 1000 !default;
+$zindex-fixed: 1030 !default;
+$zindex-sticky: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+$cursor-disabled: not-allowed !default;
+// Easing
+//
+$linear: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+$easeInQuad: cubic-bezier(0.550, 0.085, 0.680, 0.530);
+$easeInCubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$easeInQuart: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+$easeInQuint: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+$easeInSine: cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$easeInExpo: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeInCirc: cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$easeInBack: cubic-bezier(0.600, 0, 0.735, 0.045);
+$easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$easeOutCubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easeOutQuart: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$easeOutQuint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$easeOutSine: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$easeOutExpo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$easeOutCirc: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1);
+$easeInOutQuad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$easeInOutQuart: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+$easeInOutQuint: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+$easeInOutSine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+$easeInOutExpo: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+$easeInOutBack: cubic-bezier(0.680, 0, 0.265, 1);

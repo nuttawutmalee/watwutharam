@@ -1,0 +1,84 @@
+.section__contact {
+    margin-bottom: percentage(40/640);
+    @include media-breakpoint-up(lg) {
+        margin-bottom: percentage(50/1380);
+    }
+    .section__inner {
+        @include media-breakpoint-down(md) {
+            padding-left: percentage(40/560);
+            padding-right: percentage(40/560);
+        }
+    }
+    .contact__wrapper {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: $white;
+        @include media-breakpoint-up(sm) {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    }
+    .contact__row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .contact__column {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        &.contact__column--map {
+            @include media-breakpoint-up(lg) {
+                flex: 0 0 percentage(640/1066.6666666666667);
+                max-width: percentage(640/1066.6666666666667);
+            }
+        }
+        &.contact__column--address {
+            @include media-breakpoint-up(lg) {
+                flex: 0 0 percentage(320/1066.6666666666667);
+                max-width: percentage(320/1066.6666666666667);
+                margin-left: percentage(106.66666666666666/1066.6666666666667);
+            }
+        }
+    }
+    .map__wrapper {
+        position: relative;
+        width: 100%;
+        display: block;
+        @include responsive-ratio(630, 490, true);
+        margin-top: 40px;
+        @include media-breakpoint-up(lg) {
+            margin-top: 0;
+        }
+        iframe {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .contact__inner {
+        @include media-breakpoint-up(lg) {
+            padding-top: 90px;
+        }
+    }
+    .contact__title {
+        +.contact__address {
+            margin-top: 40px - 11;
+        }
+    }
+    .contact__address {
+        * {
+            @extend .text--regular;
+        }
+        p {
+            +p {
+                margin-top: 40px - 13;
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+.global__container,
+.page__container {
+	position: relative;
+	overflow: hidden;
+}
+
+// SMOOTH SCROLLBAR STYLE
+.scroll-content {
+	overflow: hidden;
+}
+
+.wrap {
+	overflow: hidden;
+}
+
+.site__main,
+.site__footer,
+section,
+.section {
+	position: relative;
+	width: 100%;
+	display: block;
+}
+
+.section {
+	background-color: #fcfbf4;
+}
+
+.site__main {
+	margin-top: 60px;
+	@include media-breakpoint-up(lg) {
+		margin-top: 110px;
+	}
+	@include media-breakpoint-up(xxl) {
+		margin-top: 120px;
+	}
+}
+
+.section__outer {
+	position: relative;
+	max-width: 1680px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: percentage(40/640);
+	padding-right: percentage(40/640);
+	@include media-breakpoint-up(lg) {
+		padding-left: percentage(50/1380);
+		padding-right: percentage(50/1380);
+	} // @include media-breakpoint-up(xl) {
+	// 	padding-left: 50px;
+	// 	padding-right: 50px;
+	// }
+}
+
+.section__inner {
+	position: relative;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	@include media-breakpoint-up(lg) {
+		padding-left: percentage(106.66666666666666/1280);
+		padding-right: percentage(106.66666666666666/1280);
+	}
+}
+
+.section__content {
+	position: relative;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: percentage(40/560);
+	padding-right: percentage(40/560);
+	@include media-breakpoint-up(lg) {
+		padding-left: percentage(213.33333333333331/1280);
+		padding-right: percentage(213.33333333333331/1280);
+	}
+}
+
+.fluid__layout {
+	position: relative;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	@include media-breakpoint-up(lg) {
+		padding-left: 8.333333333333333%;
+		padding-right: 8.333333333333333%;
+	}
+}
+
+.fluid__layout__content {
+	position: relative;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	@include media-breakpoint-up(lg) {
+		padding-left: 8.333333333333333%;
+		padding-right: 8.333333333333333%;
+	}
+	@include media-breakpoint-up(xl) {
+		padding-left: 16.666666666666666%;
+		padding-right: 16.666666666666666%;
+	}
+}
+
+.fixed__layout {
+	position: relative;
+	max-width: 1600px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}

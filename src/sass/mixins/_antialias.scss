@@ -1,0 +1,12 @@
+
+@mixin antialias {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin no-antialias {
+  font-smoothing: initial;
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: initial;
+}

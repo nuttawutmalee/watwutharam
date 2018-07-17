@@ -1,0 +1,108 @@
+.pagination {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    @include media-breakpoint-up(sm) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        font-size: 0;
+        li {
+            &:not(.prev),
+            &:not(.next) {
+                color: $body-color;
+                font-family: $font-medium;
+                font-size: 16px;
+                line-height: 20px;
+            }
+            a {
+                display: block;
+                color: currentColor;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            &.is--active {
+                color: $brand-inverse;
+            }
+            &.prev,
+            &.next {
+                a {
+                    position: relative;
+                    width: 24px;
+                    height: 24px;
+                    font-size: 0;
+                    padding: 0;
+                    &:before,
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        width: 2px;
+                        height: 50%;
+                        background-color: $brand-inverse;
+                        transition-property: transform, background;
+                        transition-duration: 0.3s, 0.3s;
+                        transition-timing-function: ease, ease;
+                        outline: 0;
+                    }
+                }
+            }
+            &.prev {
+                a {
+                    &:before,
+                    &:after {
+                        left: 1px;
+                    }
+                    &:before {
+                        transform: translateX(-50%) rotate(-135deg);
+                        transform-origin: 50% 0%;
+                    }
+                    &:after {
+                        transform: translateX(-50%) rotate(-45deg);
+                        transform-origin: 0 0;
+                    }
+                }
+            }
+            &.next {
+                a {
+                    &:before,
+                    &:after {
+                        right: 0;
+                    }
+                    &:before {
+                        transform: translateX(-50%) rotate(135deg);
+                        transform-origin: 50% 0%;
+                    }
+                    &:after {
+                        transform: translateX(-50%) rotate(45deg);
+                        transform-origin: 100% 0%;
+                    }
+                }
+            }
+            &.disable {
+                a {
+                    pointer-events: none;
+                    &:before,
+                    &:after {
+                        background-color: $brand;
+                    }
+                }
+            }
+        }
+    }
+}
+
+html.desktop {
+    .pagination ul li a {
+        &:hover,
+        &:focus {
+            color: $brand-inverse;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+body {
+    &.is--first--loading {
+        .site__preload {
+            opacity: 1;
+            visibility: visible;
+        }
+        .global__container {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
+.site__preload {
+    display: block;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 16777271;
+    font-size: 0;
+    line-height: 0;
+    background-color: $body-bg;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateZ(0);
+    transition: .55s cubic-bezier(.165, .84, .44, 1) .5s, visibility 0s 1s;
+    .loader-intro__logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); // width: 260px;
+        width: 200px;
+        span {
+            position: relative;
+            display: block;
+        }
+        canvas {
+            width: 100%;
+            height: auto;
+        }
+        svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: auto; // path {
+            //     fill: $brand;
+            // }
+        }
+        #loader__logo__1 {
+            transform: translateY(35px) translateZ(0);
+        }
+        #loader__logo__2 {
+            opacity: 0;
+            transform: translateY(35px) translateZ(0);
+        }
+        #loader__logo__3 {
+            opacity: 0;
+            transform: translateY(35px) translateZ(0);
+        }
+    }
+}
+
+.global__container {
+    opacity: 1;
+    visibility: visible;
+}
+
+body {
+    &.is--assets--loaded {
+        .site__preload {
+            .loader-intro__logo {
+                #loader__logo__1 {
+                    transform: translateY(0) translateZ(0);
+                    transition: transform 1s cubic-bezier(.23, 1, .32, 1);
+                }
+                #loader__logo__2 {
+                    opacity: 1;
+                    transform: translateY(0) translateZ(0);
+                    transition: transform 1s cubic-bezier(.23, 1, .32, 1) .15s, opacity 1s cubic-bezier(.165, .84, .44, 1) .15s;
+                }
+                #loader__logo__3 {
+                    opacity: 1;
+                    transform: translateY(0) translateZ(0);
+                    transition: transform 1s cubic-bezier(.23, 1, .32, 1) .25s, opacity 1s cubic-bezier(.165, .84, .44, 1) .25s;
+                }
+            }
+        }
+    }
+}

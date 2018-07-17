@@ -1,0 +1,8 @@
+
+// ###Appearance
+
+@mixin appearance($val: none) {
+	-webkit-appearance: $val;
+	-moz-appearance: $val;
+	appearance: $val;
+}

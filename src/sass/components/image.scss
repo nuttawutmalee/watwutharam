@@ -1,0 +1,60 @@
+.figure {
+    position: relative;
+    display: block;
+    width: 100%;
+    .figure__wrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.bg__wrapper {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bg__container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.as--parent {
+    &:not(.is--loaded--done) {
+        opacity: 0;
+        transition: opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) !important;
+    }
+    &.is--visible {
+        opacity: 1;
+    }
+}

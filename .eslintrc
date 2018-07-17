@@ -1,0 +1,36 @@
+{
+  "extends": "airbnb-base",
+  "globals": {
+    "NODE_ENV": true,
+    "window": true,
+    "document": true,
+    "$": true,
+    "jQuery": true,
+    "Modernizr": true,
+    "Detectizr": true
+  },
+  "rules": {
+    "no-console": 0,
+    "comma-dangle": 0,
+    "no-mixed-spaces-and-tabs": 1,
+    "indent": [
+      "error",
+      "tab"
+    ],
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-webpack-loader-syntax": 0,
+    "import/no-unresolved": 0,
+    "no-multi-assign": 0,
+    "no-tabs": 0,
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "max-len": [
+      "error",
+      150
+    ],
+    "global-require": 0
+  }
+}

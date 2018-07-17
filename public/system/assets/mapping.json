@@ -1,0 +1,15 @@
+{
+	"flag_icon": {
+		"en": "GB.png",
+		"zh": "CN.png",
+		"ja": "JP.png",
+		"ko": "KR.png",
+		"cs": "CZ.png",
+		"lo": "LA.png",
+		"sq": "AL.png",
+		"hi": "IN.png",
+		"ar": "SA.png",
+		"vi": "VN.png",
+        "ms": "MY.png"
+	}
+}

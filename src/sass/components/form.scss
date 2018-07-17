@@ -1,0 +1,265 @@
+
+
+  input, select, textarea, button {
+    display: block;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+  }
+  input, select, textarea {
+    @include appearance(none);
+    @include input-placeholder {
+      text-shadow: none;
+      -webkit-text-fill-color: initial;
+      opacity: 1;
+      color: #e7e5e0;
+    }
+  }
+  select {
+    @include unselectable;
+  }
+  button {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    @include unselectable;
+  }
+  label, input, select, textarea {
+    color: $color-base;
+    font-family: $font-family-base;
+    font-weight: $font-weight-base;
+    line-height: normal;
+    letter-spacing: normal;
+    text-transform: $text-transform-base;
+    width: 100%;
+  }
+  label {
+
+  }
+  input, select, textarea {
+    font-size: 15px;
+  }
+
+  .form__group {
+  }
+  .form__container {
+    &.is--error {
+      .form__control {
+        border-color: red;
+      }
+    }
+  }
+
+  .form__label {
+    font-size: 15px;
+  }
+  .form__control {
+    position: relative;
+    line-height: normal;
+  }
+
+  textarea.form__control {
+    height: auto;
+    resize: vertical;
+    padding: 0;
+    overflow: hidden;
+    line-height: em(24,18);
+    min-height: 190px;
+    padding-top: em(15, $font-base) !important;
+    padding-bottom: em(15, $font-base);
+    background-color: $gray-lighter;
+    border: 1px solid currentColor;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+
+  // SELECT + DATE FORM
+  .select__wrapper,
+  .date__wrapper {
+    position: relative;
+    select, input {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .icon {
+      position: absolute;
+      right: 0;
+      @include center(y);
+      @include unclickable;
+    }
+  }
+
+  // SELECT
+  .select__wrapper {
+    cursor: pointer;
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   z-index: 1;
+    //   right: 12px;
+    //   @include center(y);
+    //   width: 16px;
+    //   height: 16px;
+    //   pointer-events: none;
+    // }
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+    }
+  }
+
+
+  // FILE
+  .file__wrapper {
+    color: currentColor;
+    height: 44px;
+    border-bottom: 1px solid currentColor;
+    text-align: left;
+    .file {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .filename {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 44px;
+      font-family: $font-family-base;
+      font-weight: $font-weight-base;
+      font-size: em(14, $font-base);
+      line-height: 44px;
+      letter-spacing: 0.05em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-right: 136px + 40;
+    }
+    .icon-file {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  // RADIO + CHECKBOX FORM
+  .form__lists {
+    display: flex;
+    height: 44px;
+    .form__list {
+      position: relative;
+      &:not(:last-child) {
+        margin-right: em(40, $font-base);
+      }
+    }
+  }
+
+  input[type=radio],
+  input[type=checkbox] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+
+    + label {
+      padding: 0;
+      margin: 0;
+      padding-left: 40px;
+      cursor: pointer;
+      position: relative;
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        @include center(y);
+        width: 26px;
+        height: 26px;
+      }
+      &:before {
+        border: 1px solid #a5b8b1;
+        background-color: transparent;
+        transition-property: border-color, background-color;
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      }
+      &:after {
+        transform: translateY(-50%) scale(0);
+        transform-origin: center center;
+        transition: transform .2s cubic-bezier(.175,.885,.32,1.275);
+      }
+    }
+    &:not(:checked):not(:disabled):hover {
+      + label {
+        &:before {
+          transition-property: border-color, background-color;
+          transition-duration: 0.3s;
+          transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+          // border-color: $brand;
+        }
+      }
+    }
+    &:disabled {
+      + label {
+        cursor: default;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  // RADIO
+  input[type=radio] {
+    + label {
+      &:before, &:after {
+        border-radius: 100%;
+      }
+      &:after {
+        background-color: #154834;
+      }
+    }
+    &:disabled {
+      + label {
+        &:after {
+          background-color: rgba(151,151,151,0.45);
+        }
+      }
+    }
+    &:checked {
+      + label {
+        &:after {
+          transform: translateY(-50%) scale(0.6153846153846154);
+          transition: transform .4s cubic-bezier(.175,.885,.32,1.275);
+        }
+      }
+    }
+  }
+
+

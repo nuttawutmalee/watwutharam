@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="bootstrap/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="true"
+         strict="true"
+         timeoutForSmaillTests="1"
+         timeoutForMediumTests="5"
+         timeoutForLargeTests="10">
+    <testsuites>
+        <testsuite name="Feature Tests">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
+
+        <testsuite name="Unit Tests">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+
+        <testsuite name="CMS">
+            <directory suffix="Test.php">./tests/CmsApis</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="QUEUE_DRIVER" value="sync"/>
+        <env name="API_STANDARDS_TREE" value="vnd"/>
+        <env name="API_SUBTYPE" value="cms_api"/>
+        <env name="API_DOMAIN" value=""/>
+        <env name="API_PREFIX" value="api"/>
+        <env name="API_VERSION" value="v1"/>
+        <env name="API_NAME" value="CMS API"/>
+        <env name="API_CONDITIONAL_REQUEST" value="false"/>
+        <env name="API_STRICT" value="false"/>
+        <env name="API_DEFAULT_FORMAT" value="json"/>
+        <env name="DB_CONNECTION" value="testing"/>
+        <env name="DB_DATABASE" value=":memory:"/>
+    </php>
+</phpunit>

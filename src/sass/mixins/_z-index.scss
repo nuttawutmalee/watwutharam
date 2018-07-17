@@ -1,0 +1,27 @@
+
+// ###Z-index
+
+/* ==========================================================================
+   While technically this is just a pure function, but I felt it's worth being on the list as it's so easy to loose track of your z-index values when working in several different files, so we created this so that we could store them in one place for easy editing/recording. Just place this snippet in your main variables/settings.scss file (needs to be imported before any of your other files that reference a x-index of course).
+   Then where ever you're wanting to use a z-index value, name it the same as your class and add in it into your variables/setting file, like below. You'll never have a "z-index: 99999999;" headache again.
+
+   .site-header {
+       z-index: z('site-header');
+   }
+   ========================================================================== */
+@function z($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}
+
+$z-indexes: (
+  "outdated-browser",
+  "modal",
+  "site-header",
+  "page-wrapper",
+  "site-footer"
+);

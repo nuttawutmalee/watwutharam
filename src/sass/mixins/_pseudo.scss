@@ -1,0 +1,18 @@
+
+
+// ###Pseudo
+/* ==========================================================================
+   When using ::before and ::after you'll always need these three, so we're saving two lines of code every time you use this.
+   See below an example of using it without any arguments (You will also see this mixin used in some of our other mixins below too).
+
+   div::after {
+       @include pseudo;
+       top: -1rem; left: -1rem;
+       width: 1rem; height: 1rem;
+   }
+   ========================================================================== */
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
