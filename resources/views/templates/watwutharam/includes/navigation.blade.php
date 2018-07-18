@@ -48,11 +48,11 @@ $currentUrl = url()->current();
                     $label = isset_not_empty($menu->label);
                     ?>
                     <li>
-                        <a href="{{ {{ \App\CMS\Helpers\CMSHelper::url($item->url) }} }}"
-                            target="@text($item->target)"
-                            title="@text($item->label)" 
+                        <a href="{{ \App\CMS\Helpers\CMSHelper::url($url) }}"
+                            target="@text($target)"
+                            title="@text($label)" 
                             @if($currentUrl === $url) class="is--active" @endif>
-                            @text($item->label)
+                            @text($label)
                         </a>
                     </li>
                 @endforeach

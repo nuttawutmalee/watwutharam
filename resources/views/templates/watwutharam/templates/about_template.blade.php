@@ -1,7 +1,7 @@
 @has($pageItem)
     <?php
     $pageItem = isset_not_empty($pageItem);
-    $content = \App\CMS\Helpers\CMSHelper::getItemOption($content);
+    $content = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'content');
     ?>
 
     @has($content)

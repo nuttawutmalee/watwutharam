@@ -10,12 +10,11 @@
 
     // Articles
     $articleLimit = intval(\App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'article_limit', 6));
-    $articleCategory = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'article_category');
     $articles = \App\CMS\Helpers\CMSHelper::getPagesByCategories(
-        $articleCategory,
+        'ARTICLE',
         $articleLimit,
-        CMSConstants::ORDER_BY_UPDATED_AT,
-        CMSConstants::ORDER_DESC,
+        \App\CMS\Constants\CMSConstants::ORDER_BY_UPDATED_AT,
+        \App\CMS\Constants\CMSConstants::ORDER_DESC,
         null,
         ['article_metadata']
     );

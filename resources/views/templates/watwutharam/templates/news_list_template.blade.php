@@ -10,12 +10,11 @@
 
     // News
     $newsLimit = intval(\App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'news_limit', 4));
-    $newsCategory = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'news_category');
     $news = \App\CMS\Helpers\CMSHelper::getPagesByCategories(
-        $newsCategory,
+        'NEWS',
         $newsLimit,
-        CMSConstants::ORDER_BY_UPDATED_AT,
-        CMSConstants::ORDER_DESC,
+        \App\CMS\Constants\CMSConstants::ORDER_BY_UPDATED_AT,
+        \App\CMS\Constants\CMSConstants::ORDER_DESC,
         null,
         ['news_metadata']
     );
@@ -65,7 +64,7 @@
                                 \Carbon\Carbon::executeWithLocale($locale, function ($newLocale) use ($eventDate, &$day, &$month) {
                                     if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime($eventDate)) {
                                         $day = $carbonDate->formatLocalized('%d');
-                                        $month = $carbonDate->formatLocalized('%h');
+                                        $month = $carbonDate->formatLocalized('%b');
                                     }
                                 });
                             }

@@ -192,29 +192,29 @@ body.is--assets--loaded .site__preload .loader-intro__logo #loader__logo__3{
 }
 @font-face{
   font-family:'promptlight';
-  src:url("templates/watwutaram/assets/fonts/prompt-light-webfont.woff2") format("woff2"), url("templates/watwutaram/assets/fonts/prompt-light-webfont.woff") format("woff"), url("templates/watwutaram/assets/fonts/prompt-light-webfont.ttf") format("truetype");
+  src:url("templates/watwutharam/assets/fonts/prompt-light-webfont.woff2") format("woff2"), url("templates/watwutharam/assets/fonts/prompt-light-webfont.woff") format("woff"), url("templates/watwutharam/assets/fonts/prompt-light-webfont.ttf") format("truetype");
   font-weight:normal;
   font-style:normal;
 }
 
 @font-face{
   font-family:'promptmedium';
-  src:url("templates/watwutaram/assets/fonts/prompt-medium-webfont.woff2") format("woff2"), url("templates/watwutaram/assets/fonts/prompt-medium-webfont.woff") format("woff"), url("templates/watwutaram/assets/fonts/prompt-medium-webfont.ttf") format("truetype");
+  src:url("templates/watwutharam/assets/fonts/prompt-medium-webfont.woff2") format("woff2"), url("templates/watwutharam/assets/fonts/prompt-medium-webfont.woff") format("woff"), url("templates/watwutharam/assets/fonts/prompt-medium-webfont.ttf") format("truetype");
   font-weight:normal;
   font-style:normal;
 }
 
 @font-face{
   font-family:'promptregular';
-  src:url("templates/watwutaram/assets/fonts/prompt-regular-webfont.woff2") format("woff2"), url("templates/watwutaram/assets/fonts/prompt-regular-webfont.woff") format("woff"), url("templates/watwutaram/assets/fonts/prompt-regular-webfont.ttf") format("truetype");
+  src:url("templates/watwutharam/assets/fonts/prompt-regular-webfont.woff2") format("woff2"), url("templates/watwutharam/assets/fonts/prompt-regular-webfont.woff") format("woff"), url("templates/watwutharam/assets/fonts/prompt-regular-webfont.ttf") format("truetype");
   font-weight:normal;
   font-style:normal;
 }
 
 @font-face{
   font-family:'watwutharam';
-  src:url("templates/watwutaram/assets/fonts/watwutharam.eot?djbho9");
-  src:url("templates/watwutaram/assets/fonts/watwutharam.eot?djbho9#iefix") format("embedded-opentype"), url("templates/watwutaram/assets/fonts/watwutharam.ttf?djbho9") format("truetype"), url("templates/watwutaram/assets/fonts/watwutharam.woff?djbho9") format("woff"), url("templates/watwutaram/assets/fonts/watwutharam.svg?djbho9#watwutharam") format("svg");
+  src:url("templates/watwutharam/assets/fonts/watwutharam.eot?djbho9");
+  src:url("templates/watwutharam/assets/fonts/watwutharam.eot?djbho9#iefix") format("embedded-opentype"), url("templates/watwutharam/assets/fonts/watwutharam.ttf?djbho9") format("truetype"), url("templates/watwutharam/assets/fonts/watwutharam.woff?djbho9") format("woff"), url("templates/watwutharam/assets/fonts/watwutharam.svg?djbho9#watwutharam") format("svg");
   font-weight:normal;
   font-style:normal;
 }

@@ -1,9 +1,9 @@
 @has($pageItem)
     <?php
     $pageItem = isset_not_empty($pageItem);
-    $sectionTitle = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem->section_title);
-    $address = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem->address);
-    $map = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem->map_src);
+    $sectionTitle = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'section_title');
+    $address = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'address');
+    $map = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'map_src');
     ?>
 
     @if(isset_not_empty($address) || isset_not_empty($map))

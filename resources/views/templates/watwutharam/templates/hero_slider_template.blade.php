@@ -1,7 +1,7 @@
 @has($pageItem)
     <?php
     $pageItem = isset_not_empty($pageItem);
-    $banners = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem->banners, []);
+    $banners = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'banners', []);
     ?>
 
     @has($banners)

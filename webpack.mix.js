@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const templateName = process.env.APP_NAME || 'watwutaram';
+const templateName = process.env.APP_NAME || 'watwutharam';
 const mix = require('laravel-mix');
 const path = require('path');
 const webpack = require('webpack');

@@ -1,9 +1,9 @@
 @has($pageItem)
     <?php
     $pageItem = isset_not_empty($pageItem);
-    $title = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem->title);
-    $image = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem->image);
-    $imageAlt = \App\CMS\Helpers\CMSHelper::getItemOption($page->imageAlt);
+    $title = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'title');
+    $image = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'image');
+    $imageAlt = \App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'image_alt');
     ?>
 
     @has($image)
