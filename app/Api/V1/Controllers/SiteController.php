@@ -829,9 +829,9 @@ class SiteController extends BaseController
             ]);
 
         if (empty($site->site_url)) {
-            $baseApiUrl = config('cms.' . get_cms_application() . '.previews.' . $site->domain_name);
+            $baseApiUrl = config('cms.' . get_cms_application() . '.previews.' . $site->domain_name) . '/client-api/';
         } else {
-            $baseApiUrl = preg_replace('/(\\/|\\\)+$/', '', $site->site_url) . '/api/';
+            $baseApiUrl = preg_replace('/(\\/|\\\)+$/', '', $site->site_url) . '/client-api/';
         }
 
         if(is_null($baseApiUrl)) {

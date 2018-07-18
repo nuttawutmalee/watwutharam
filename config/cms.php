@@ -31,7 +31,7 @@ return [
 
         'preview_post_api' => 'preview',
         'previews' => [
-            'watwutharam' => 'http://watwutharam.dev/api'
+            'watwutharam' => 'http://watwutharam.dev/client-api'
         ]
     ],
 ];

@@ -1,6 +1,6 @@
 <?php
 $currentUrl = url()->current();
-$topGroupMenu = \App\CMS\Helpers\CMSHelper::getGlobalItemByVariableName('top_group_menu');
+$topGroupMenu = \App\CMS\Helpers\CMSHelper::getGlobalItemByVariableName('top_menu_group');
 $topMenus = isset_not_empty($topGroupMenu->menus, []);
 ?>
 
