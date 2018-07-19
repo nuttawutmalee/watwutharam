@@ -5,7 +5,7 @@
     $totalPages = 0;
 
     // Articles
-    $articles = \App\CMS\Helper\CMSHelper::getCurrentChildrenPages(null, null, true, null, [], ['article_metadata']);
+    $articles = \App\CMS\Helpers\CMSHelper::getCurrentChildrenPages(null, null, true, null, [], ['article_metadata']);
 
     if (count($articles) > 0) {
         $totalPages = round(count($articles) / 6);

@@ -2,7 +2,7 @@
 $siteLanguages = \App\CMS\Helpers\CMSHelper::getSiteLanguages();
 $mainGroupMenu = \App\CMS\Helpers\CMSHelper::getGlobalItemByVariableName('main_menu_group');
 $mainMenus = isset_not_empty($mainGroupMenu->menus, []);
-$currentUrl = url()->current();
+$currentUrl = app('request')->path();
 ?>
 
 <nav class="site__nav">
@@ -46,6 +46,7 @@ $currentUrl = url()->current();
                     $url = isset_not_empty($menu->url);
                     $target = isset_not_empty($menu->target, '_self');
                     $label = isset_not_empty($menu->label);
+                    $url = $url === 'homepage' ? '/' : $url;
                     ?>
                     <li>
                         <a href="{{ \App\CMS\Helpers\CMSHelper::url($url) }}"

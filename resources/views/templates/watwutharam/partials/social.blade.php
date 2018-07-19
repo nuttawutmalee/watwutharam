@@ -1,6 +1,6 @@
 <?php
 $socialMedia = \App\CMS\Helpers\CMSHelper::getGlobalItemByVariableName('social_media');
-$socials = isset_not_empty($mainGroupMenu->socials, []);
+$socials = isset_not_empty($socialMedia->socials, []);
 ?>
 
 @has($socials)
