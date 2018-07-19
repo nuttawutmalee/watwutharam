@@ -8,7 +8,7 @@
     $articles = \App\CMS\Helpers\CMSHelper::getCurrentChildrenPages(null, null, true, null, [], ['article_metadata']);
 
     if (count($articles) > 0) {
-        $totalPages = round(count($articles) / 6);
+        $totalPages = ceil(count($articles) / 6);
     }
 
     $articles = collect($articles)->slice(($currentPage - 1) * 6, 6)->all();

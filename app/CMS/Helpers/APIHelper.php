@@ -531,8 +531,8 @@ class APIHelper
 
         $data = null;
         $client = resolve(CMSConstants::CMS_API);
-        $url = config('cms.api.urls.helpers.post_get_pages_search_by_categories');
-        $applicationName = config('cms.application_name');
+        $url = config('cms-client.api.urls.helpers.post_get_pages_search_by_categories');
+        $applicationName = config('cms-client.application_name');
 
         $url = self::replaceUrlParameters($url, [
             'domain_name' => $site->domain_name
@@ -615,8 +615,8 @@ class APIHelper
 
         $data = null;
         $client = resolve(CMSConstants::CMS_API);
-        $url = config('cms.api.urls.helpers.post_get_pages_search_by_categories');
-        $applicationName = config('cms.application_name');
+        $url = config('cms-client.api.urls.helpers.post_get_pages_search_by_categories');
+        $applicationName = config('cms-client.application_name');
 
         $url = self::replaceUrlParameters($url, [
             'domain_name' => $site->domain_name
@@ -781,8 +781,8 @@ class APIHelper
 
         $data = null;
         $client = resolve(CMSConstants::CMS_API);
-        $url = config('cms.api.urls.helpers.post_get_pages_search_by_template');
-        $applicationName = config('cms.application_name');
+        $url = config('cms-client.api.urls.helpers.post_get_pages_search_by_template');
+        $applicationName = config('cms-client.application_name');
 
         $url = self::replaceUrlParameters($url, [
             'domain_name' => $site->domain_name

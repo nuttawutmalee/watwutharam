@@ -41,9 +41,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    @headscripts
 </head>
 
 <body class="is--first--loading">
+    @bodytopscripts
 
     <!-- BEGIN GLOBAL CONTAINER -->
     <div class="global__container">
@@ -71,5 +74,7 @@
 
     <!-- Custom scripts -->
     @stack('scripts')
+
+    @bodybottomscripts
 </body>
 </html>

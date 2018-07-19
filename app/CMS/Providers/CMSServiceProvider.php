@@ -82,17 +82,17 @@ class CMSServiceProvider extends ServiceProvider
 
         /** @noinspection PhpUndefinedMethodInspection */
         Blade::directive('headscripts', function () {
-            return '{!! ' . CMSHelper::generateAdditionalScripts(CMSConstants::ADDITIONAL_SCRIPTS_HEAD) . '!!}';
+            return CMSHelper::generateAdditionalScripts(CMSConstants::ADDITIONAL_SCRIPTS_HEAD);
         });
 
         /** @noinspection PhpUndefinedMethodInspection */
         Blade::directive('bodytopscripts', function () {
-            return '{!! ' . CMSHelper::generateAdditionalScripts(CMSConstants::ADDITIONAL_SCRIPTS_BODY_TOP) . '!!}';
+            return CMSHelper::generateAdditionalScripts(CMSConstants::ADDITIONAL_SCRIPTS_BODY_TOP);
         });
 
         /** @noinspection PhpUndefinedMethodInspection */
         Blade::directive('bodybottomscripts', function () {
-            return '{!! ' . CMSHelper::generateAdditionalScripts(CMSConstants::ADDITIONAL_SCRIPTS_BODY_BOTTOM) . '!!}';
+            return CMSHelper::generateAdditionalScripts(CMSConstants::ADDITIONAL_SCRIPTS_BODY_BOTTOM);
         });
 
         /** @noinspection PhpUndefinedMethodInspection */

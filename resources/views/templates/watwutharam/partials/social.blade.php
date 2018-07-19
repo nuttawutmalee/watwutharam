@@ -13,7 +13,7 @@ $socials = isset_not_empty($socialMedia->socials, []);
         $socialUrlTarget = isset_not_empty($social->social_url_target, '_blank');
         ?>
         <li>
-            <a href="{{ \App\CMS\Helpers\CMSHelper::url('/') }}" 
+            <a href="{{ \App\CMS\Helpers\CMSHelper::url($socialUrl) }}" 
                 target="@text($socialUrlTarget)"
                 title="@text($socialTitle)">
                 <i class="icon-@text($socialIcon)"></i>

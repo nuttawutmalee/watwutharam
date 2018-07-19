@@ -20,7 +20,7 @@
 
 
     if (count($galleryItems) > 0) {
-        $totalPages = round(count($galleryItems) / 8);
+        $totalPages = ceil(count($galleryItems) / 8);
     }
 
     $galleryItems = collect($galleryItems)->slice(($currentPage - 1) * 8, 8)->all();

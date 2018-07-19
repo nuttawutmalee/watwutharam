@@ -8,10 +8,21 @@
     $newsItems = \App\CMS\Helpers\CMSHelper::getCurrentChildrenPages(null, null, true, null, [], ['news_metadata']);
 
     if (count($newsItems) > 0) {
-        $totalPages = round(count($newsItems) / 6);
+        $totalPages = ceil(count($newsItems) / 6);
     }
 
     $newsItems = collect($newsItems)->slice(($currentPage - 1) * 6, 6)->all();
+
+    if (count($newsItems) > 0) {
+        $newsItems = collect($newsItems)
+            ->sortByDesc(function ($newsItem) {
+                if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime(isset_not_empty($newsItem->event_date))) {
+                    return $carbonDate->timestamp;
+                }
+                return null;
+            })
+            ->all();
+    }
     ?>
 
     @has($newsItems)

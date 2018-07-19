@@ -10,7 +10,7 @@
 
     // News
     $newsLimit = intval(\App\CMS\Helpers\CMSHelper::getItemOption($pageItem, 'news_limit', 4));
-    $news = \App\CMS\Helpers\CMSHelper::getPagesByCategories(
+    $newsItems = \App\CMS\Helpers\CMSHelper::getPagesByCategories(
         'NEWS',
         $newsLimit,
         \App\CMS\Constants\CMSConstants::ORDER_BY_UPDATED_AT,
@@ -18,9 +18,20 @@
         null,
         ['news_metadata']
     );
+
+    if (isset_not_empty($newsItems) && count($newsItems) > 0) {
+        $newsItems = collect($newsItems)
+            ->sortByDesc(function ($newsItem) {
+                if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime(isset_not_empty($newsItem->event_date))) {
+                    return $carbonDate->timestamp;
+                }
+                return null;
+            })
+            ->all();
+    }
     ?>
 
-    @has($news)
+    @has($newsItems)
         <section class="section__news section__news__lists bg--body--2 js-imageload-section-wrapper">
             <div class="section__outer">
                 <div class="section__inner">
@@ -43,7 +54,7 @@
                         @endif
                     </div>
                     <div class="lists">
-                        @foreach($news as $index => $newsItem)
+                        @foreach($newsItems as $index => $newsItem)
                             <?php
                             $metadata = \App\CMS\Helpers\CMSHelper::getPageItemByVariableName('news_metadata', $newsItem);
                             $link = isset_not_empty($newsItem->friendly_url);
