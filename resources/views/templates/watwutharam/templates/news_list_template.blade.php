@@ -19,14 +19,16 @@
         ['news_metadata']
     );
 
-    if (isset_not_empty($newsItems) && count($newsItems) > 0) {
+    if (isset_not_empty($newsItems)) {
         $newsItems = collect($newsItems)
-            ->sortByDesc(function ($newsItem) {
-                if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime(isset_not_empty($newsItem->event_date))) {
+            ->sortBy(function ($newsItem) {
+		$metadata = \App\CMS\Helpers\CMSHelper::getPageItemByVariableName('news_metadata', $newsItem);
+                if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime($metadata->event_date)) {
                     return $carbonDate->timestamp;
                 }
                 return null;
             })
+	    ->values()
             ->all();
     }
     ?>
@@ -71,13 +73,15 @@
                                 $locale = \App\CMS\Helpers\CMSHelper::getCurrentLocale()
                                     ? \App\CMS\Helpers\CMSHelper::getCurrentLocale()
                                     : 'th';
+				$locale = preg_replace('/_.*$/', '', $locale);
+				
+				\Carbon\Carbon::setLocale($locale);
+				\Carbon\Carbon::setUtf8(true);
 
-                                \Carbon\Carbon::executeWithLocale($locale, function ($newLocale) use ($eventDate, &$day, &$month) {
-                                    if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime($eventDate)) {
-                                        $day = $carbonDate->formatLocalized('%d');
-                                        $month = $carbonDate->formatLocalized('%b');
-                                    }
-                                });
+				    if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime($eventDate)) {
+					$day = $carbonDate->formatLocalized('%d');
+					$month = $carbonDate->formatLocalized('%b');
+				    }
                             }
                             ?>
                             <div class="list">

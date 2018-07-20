@@ -48,11 +48,11 @@ return [
         // Productions
        'watwutharam' => [
            'driver' => 'mysql',
-           'host' => 'localhost',
+           'host' => '127.0.0.1',
            'port' => 3306,
            'database' => 'watwutharam',
            'username' => 'root',
-           'password' => '',
+           'password' => '!wasBORN!n1993',
            'unix_socket' => '',
            'charset' => 'utf8mb4',
            'collation' => 'utf8mb4_unicode_ci',
