@@ -48,6 +48,9 @@
             padding-left: percentage(106.66666666666666/1280);
             padding-right: percentage(106.66666666666666/1280);
         }
+        .font-black {
+            color: #000;
+        }
     }
     .title {
         +.sub__title {
