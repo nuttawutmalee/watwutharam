@@ -14,7 +14,7 @@
                         $subtitle = isset_not_empty($banner->subtitle);
                         $image = isset_not_empty($banner->image);
                         $imageAlt = isset_not_empty($banner->image_alt);
-                        $fontClass = isset_not_empty($banner->font_color) === 'black' ? 'font-black' : '';
+                        $fontClass = isset_not_empty($banner->font_color) === 'black' ? 'text--black' : 'text--white';
                         ?>
 
                         @has($image)
@@ -26,8 +26,8 @@
                                 </div>
 
                                 @if(isset_not_empty($title) || isset_not_empty($subtitle))
-                                    <div class="hero__content text--white text--center">
-                                        <div class="hero__content__inner {{ $fontClass }}">
+                                    <div class="hero__content {{ $fontClass }} text--center">
+                                        <div class="hero__content__inner">
                                             @has($title)
                                                 <div class="title">
                                                     <h1>@text($title)</h1>
