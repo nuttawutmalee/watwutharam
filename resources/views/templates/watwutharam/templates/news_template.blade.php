@@ -8,6 +8,11 @@
     $newsItems = \App\CMS\Helpers\CMSHelper::getCurrentChildrenPages(null, null, true, null, [], ['news_metadata']);
 
     if (count($newsItems) > 0) {
+	$newsItems = collect($newsItems)
+		->filter(function ($newsItem) {
+			return \App\CMS\Helpers\CMSHelper::getPageItemByVariableName('news_metadata', $newsItem);
+		})
+		->all();
         $totalPages = ceil(count($newsItems) / 6);
     }
 
@@ -15,10 +20,12 @@
 
     if (count($newsItems) > 0) {
         $newsItems = collect($newsItems)
-            ->sortByDesc(function ($newsItem) {
-                if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime(isset_not_empty($newsItem->event_date))) {
-                    return $carbonDate->timestamp;
-                }
+	->sortBy(function ($newsItem) {
+		if ($metadata = \App\CMS\Helpers\CMSHelper::getPageItemByVariableName('news_metadata', $newsItem)) {
+			if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime(isset_not_empty($metadata->event_date))) {
+			    return $carbonDate->timestamp;
+			}
+		}
                 return null;
             })
             ->all();
@@ -47,13 +54,16 @@
                                 $locale = \App\CMS\Helpers\CMSHelper::getCurrentLocale()
                                     ? \App\CMS\Helpers\CMSHelper::getCurrentLocale()
                                     : 'th';
+				$locale = preg_replace('/_.*$/', '', $locale);         
 
-                                \Carbon\Carbon::executeWithLocale($locale, function ($newLocale) use ($eventDate, &$day, &$month) {
-                                    if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime($eventDate)) {
-                                        $day = $carbonDate->formatLocalized('%d');
-                                        $month = $carbonDate->formatLocalized('%b');
-                                    }
-                                });
+				\Carbon\Carbon::setLocale($locale);
+				\Carbon\Carbon::setUtf8(true);
+
+			        if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime($eventDate)) {
+				     	$day = $carbonDate->format('d');
+		 		    	$month = $carbonDate->format('M');
+			    	}
+                               
                             }
                             ?>
                             <div class="list">

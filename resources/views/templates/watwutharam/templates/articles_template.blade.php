@@ -6,8 +6,13 @@
 
     // Articles
     $articles = \App\CMS\Helpers\CMSHelper::getCurrentChildrenPages(null, null, true, null, [], ['article_metadata']);
-
+	
     if (count($articles) > 0) {
+	$articles = collect($articles)
+		->filter(function ($article) {
+			return \App\CMS\Helpers\CMSHelper::getPageItemByVariableName('article_metadata', $article);
+		})
+		->all();
         $totalPages = ceil(count($articles) / 6);
     }
 

@@ -22,10 +22,11 @@
     if (isset_not_empty($newsItems)) {
         $newsItems = collect($newsItems)
             ->sortBy(function ($newsItem) {
-		$metadata = \App\CMS\Helpers\CMSHelper::getPageItemByVariableName('news_metadata', $newsItem);
-                if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime($metadata->event_date)) {
-                    return $carbonDate->timestamp;
-                }
+		if ($metadata = \App\CMS\Helpers\CMSHelper::getPageItemByVariableName('news_metadata', $newsItem)) {
+			if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime(isset_not_empty($metadata->event_date))) {
+			    return $carbonDate->timestamp;
+			}
+		}
                 return null;
             })
 	    ->values()
@@ -79,8 +80,8 @@
 				\Carbon\Carbon::setUtf8(true);
 
 				    if ($carbonDate = \App\CMS\Helpers\CMSHelper::createDateTime($eventDate)) {
-					$day = $carbonDate->formatLocalized('%d');
-					$month = $carbonDate->formatLocalized('%b');
+					$day = $carbonDate->format('d');
+					$month = $carbonDate->format('M');
 				    }
                             }
                             ?>
